@@ -12,6 +12,16 @@
                 Source="cara.png"
                 HeightRequest="225"
                 />
+/*
+            <Label
+                x:Name="ContaPontos"
+                Text="Total De Pontos:"
+                
+                /> */
+                
+                
+                  
+
             <Picker
                 x:Name="SelecaoPicker"
                 Title="Escolha um lado">
@@ -19,6 +29,7 @@
                     <x:Array Type="{x:Type x:String}">
                         <x:String>Cara</x:String>
                         <x:String>Coroa</x:String>
+                        
                     </x:Array>
                 </Picker.ItemsSource>
             </Picker>
