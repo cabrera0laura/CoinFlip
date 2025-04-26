@@ -11,8 +11,9 @@
 
         private void FlipButton_Clicked(object sender, EventArgs e)
         {
-            Random random = new Random();
+            Random random = new Random();     //                                                                       pq esta comentado; foi substituido pelo Game, if Boolean?
             int sorteio = random.Next(2);
+
             //Animação();
 
             /*
