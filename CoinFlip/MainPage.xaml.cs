@@ -14,7 +14,7 @@
             Random random = new Random();
             int sorteio = random.Next(2);
             //Animação();
-             
+
             /*
             if (sorteio == 0)
             {
@@ -24,8 +24,8 @@
             {
                 MoedaImage.Source = "coroa.png";
             }*/
-            
-            
+
+
             Coin moeda = new Coin();
             MoedaImage.Source = moeda.Flip() + ".png";
 
@@ -33,7 +33,8 @@
             sorteio = moeda.LadoSorteado == "cara" ? 0 : 1;
 
             if (moeda.LadoSorteado == "cara")
-                sorteio = 0; else sorteio = 1;
+                sorteio = 0;
+            else sorteio = 1;
 
             if (SelecaoPicker.SelectedIndex == sorteio)
             {
@@ -43,7 +44,12 @@
             {
                 DisplayAlert("Se ferrou", "Você perdeu!", "Ok");
             }
+
+            Game jogo = new Game();
+
+            PlayerPointLabel.Text = $"Você ganho {jogo.PlayerPoint} vezes ao todo. ";
+            //na MainPage.xaml => sequencia.
+            StreakLabel.Text = $"Você ganhou {jogo.Streak} sequencias ao todo";
         }
     }
-
 }
