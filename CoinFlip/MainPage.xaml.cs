@@ -3,6 +3,7 @@
     public partial class MainPage : ContentPage
     {
         int count = 0;
+        Game jogo = new Game();
 
         public MainPage()
         {
@@ -31,13 +32,13 @@
             MoedaImage.Source = moeda.Flip() + ".png";
 
             // LS esta faltando algo
-            sorteio = moeda.LadoSorteado == "cara" ? 0 : 1;
+           // sorteio = moeda.LadoSorteado == "cara" ? 0 : 1;
 
             if (moeda.LadoSorteado == "cara")
                 sorteio = 0;
             else sorteio = 1;
 
-            if (SelecaoPicker.SelectedIndex == sorteio)
+            if (jogo.CheckWinner(sorteio,SelecaoPicker.SelectedIndex))
             {
                 DisplayAlert("Parabéns", "Você venceu!", "Ok");
             }
@@ -46,7 +47,6 @@
                 DisplayAlert("Se ferrou", "Você perdeu!", "Ok");
             }
 
-            Game jogo = new Game();
 
             PlayerPointLabel.Text = $"Você ganho {jogo.PlayerPoint} vezes ao todo. ";
             //na MainPage.xaml => sequencia.
